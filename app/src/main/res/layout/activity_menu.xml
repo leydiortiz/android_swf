@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Menú principal -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
+    android:background="#FFFFFF">
+
+    <!-- Logo -->
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/logo_app"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Título -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MENÚ PRINCIPAL"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#F57C00"
+        android:layout_marginBottom="30dp"/>
+
+    <!-- Botón Quiénes somos -->
+    <Button
+        android:id="@+id/btnQuienes"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="QUIÉNES SOMOS"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- Botón Servicios -->
+    <Button
+        android:id="@+id/btnServicios"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="SERVICIOS"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- Botón Buses -->
+    <Button
+        android:id="@+id/btnBuses"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="BUSES"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- Botón Cerrar sesión -->
+    <Button
+        android:id="@+id/btnSalir"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="CERRAR SESIÓN"
+        android:backgroundTint="#D32F2F"
+        android:textColor="#FFFFFF"/>
+
+</LinearLayout>

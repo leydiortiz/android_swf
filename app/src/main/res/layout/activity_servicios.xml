@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="#FFFFFF">
+
+        <!-- Botón volver -->
+        <Button
+            android:id="@+id/btnVolver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="← Volver"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Título -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SERVICIOS"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#F57C00"
+            android:layout_marginBottom="15dp"/>
+
+        <!-- Imagen -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/img_servicios"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Botón 1 -->
+        <Button
+            android:id="@+id/btnUbicacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Seguimiento en tiempo real"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Botón 2 -->
+
+        <Button
+            android:id="@+id/btnNotificaciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🔔 Notificaciones"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Botón 3 -->
+        <Button
+            android:id="@+id/btnHorarios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📅 Horarios"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Botón 4 -->
+        <Button
+            android:id="@+id/btnInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="👥 Información"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Menú inferior -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnMenu"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="MENÚ"/>
+
+
+            <Button
+                android:id="@+id/btnBuses"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="BUSES"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
