@@ -1,71 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!-- Pantalla de Login -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="20dp"
     android:gravity="center"
-    android:background="#FFFFFF"
-    android:padding="20dp">
-
-    <!-- Logo -->
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/logo_app"
-        android:layout_marginBottom="20dp"/>
-
-    <!-- Usuario -->
-    <EditText
-        android:id="@+id/etUsuario"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:hint="Usuario"
-        android:layout_marginBottom="10dp"/>
-
-    <!-- Rol -->
-    <EditText
-        android:id="@+id/etRol"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:hint="Rol de usuario"
-        android:layout_marginBottom="10dp"/>
-
-    <!-- Contraseña -->
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:hint="Contraseña"
-        android:inputType="textPassword"
-        android:layout_marginBottom="20dp"/>
-
-    <!-- Botón ingresar -->
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="INGRESAR"
-        android:backgroundTint="#1565C0"
-        android:textColor="#FFFFFF"/>
+    android:background="#FFFFFF">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="¿No tienes cuenta?"
-        android:layout_marginTop="15dp"
-        android:layout_gravity="center"/>
+        android:text="Registro de Usuario"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"/>
 
-    <!-- Botón No tienes cuenta Registrate  -->
-    <Button
-        android:id="@+id/btnIrRegistro"
+    <EditText
+        android:id="@+id/etUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Registrarse"
+        android:hint="Usuario"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/etRol"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Rol (admin, padre, acudiente...)"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/btnRegistrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registrar"
+        android:backgroundTint="#1565C0"
+        android:textColor="#FFFFFF"/>
+
+    <Button
+        android:id="@+id/btnVolverLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Volver al Login"
         android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/tvUsuarios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Usuarios registrados:"
+        android:layout_marginTop="20dp"
+        android:textSize="14sp"/>
 
 </LinearLayout>

@@ -3,7 +3,6 @@ package com.example.rutaescolarapp
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class ServiciosActivity : AppCompatActivity() {
@@ -12,48 +11,50 @@ class ServiciosActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_servicios)
 
-        // Botones principales
+        // 🔘 Botones principales
         val btnVolver = findViewById<Button>(R.id.btnVolver)
         val btnUbicacion = findViewById<Button>(R.id.btnUbicacion)
         val btnNotificaciones = findViewById<Button>(R.id.btnNotificaciones)
         val btnHorarios = findViewById<Button>(R.id.btnHorarios)
         val btnInfo = findViewById<Button>(R.id.btnInfo)
 
-        // Menú inferior
+        // 🔻 Menú inferior
         val btnMenu = findViewById<Button>(R.id.btnMenu)
+        val btnBuses = findViewById<Button>(R.id.btnBuses) // 🔥 ESTE FALTABA
 
-        // Botón volver
+        // 🔙 Volver
         btnVolver.setOnClickListener {
-            finish()
+            onBackPressedDispatcher.onBackPressed()
         }
 
-        // 📍 Abrir mapa
+        // 📍 Mapa
         btnUbicacion.setOnClickListener {
-            val intent = Intent(this, MenuActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, MapaActivity::class.java))
         }
 
         // 🔔 Notificaciones
         btnNotificaciones.setOnClickListener {
-            Toast.makeText(this, "Notificaciones", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, NotificacionesActivity::class.java))
         }
 
         // 📅 Horarios
         btnHorarios.setOnClickListener {
-            Toast.makeText(this, "Horarios", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, HorariosActivity::class.java))
         }
 
         // 👥 Información
         btnInfo.setOnClickListener {
-            Toast.makeText(this, "Información", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, InfoActivity::class.java))
+        }
+
+        // 🚌 BUSES (🔥)
+        btnBuses.setOnClickListener {
+            startActivity(Intent(this, BusesActivity::class.java))
         }
 
         // 🔙 Menú
         btnMenu.setOnClickListener {
-            finish()
+            startActivity(Intent(this, MenuActivity::class.java))
         }
-
-        // ℹ️ Servicios (solo si el botón existe en el XML)
-
     }
 }
