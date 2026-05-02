@@ -3,6 +3,7 @@ package com.example.rutaescolarapp
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import kotlin.concurrent.thread
 
 class RegistroActivity : AppCompatActivity() {
 
@@ -11,11 +12,6 @@ class RegistroActivity : AppCompatActivity() {
     private lateinit var etPassword: EditText
     private lateinit var btnRegistrar: Button
     private lateinit var btnVolverLogin: Button
-    private lateinit var tvUsuarios: TextView
-   companion object {
-        // 🔥 Lista temporal de usuarios (usuario, rol, password)
-        val usuariosRegistrados = mutableListOf<Triple<String, String, String>>()
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,36 +22,35 @@ class RegistroActivity : AppCompatActivity() {
         etPassword = findViewById(R.id.etPassword)
         btnRegistrar = findViewById(R.id.btnRegistrar)
         btnVolverLogin = findViewById(R.id.btnVolverLogin)
-        tvUsuarios = findViewById(R.id.tvUsuarios)
 
-        // Mostrar usuarios existentes
-        mostrarUsuarios()
-
+        // 🔥 BOTÓN REGISTRAR (CONECTADO A BD)
         btnRegistrar.setOnClickListener {
 
             val usuario = etUsuario.text.toString().trim()
             val rol = etRol.text.toString().trim()
             val password = etPassword.text.toString().trim()
 
-            if (usuario.isEmpty() || rol.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show()
-            } else {
+            if (usuario.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Completa los campos", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
-                val existe = usuariosRegistrados.any { it.first == usuario }
+            thread {
+                val respuesta = Conexion.registrar(usuario, rol, password)
 
-                if (existe) {
-                    Toast.makeText(this, "El usuario ya existe", Toast.LENGTH_SHORT).show()
-                } else {
-
-                    usuariosRegistrados.add(Triple(usuario, rol, password))
-
-                    Toast.makeText(this, "Usuario registrado correctamente", Toast.LENGTH_SHORT).show()
-
-                    mostrarUsuarios()
-
-                    etUsuario.text.clear()
-                    etRol.text.clear()
-                    etPassword.text.clear()
+                runOnUiThread {
+                    when (respuesta) {
+                        "OK" -> {
+                            Toast.makeText(this, "Usuario registrado correctamente", Toast.LENGTH_SHORT).show()
+                            finish() // vuelve al login
+                        }
+                        "EXISTE" -> {
+                            Toast.makeText(this, "El usuario ya existe", Toast.LENGTH_SHORT).show()
+                        }
+                        else -> {
+                            Toast.makeText(this, "Error en el registro", Toast.LENGTH_SHORT).show()
+                        }
+                    }
                 }
             }
         }
@@ -63,20 +58,6 @@ class RegistroActivity : AppCompatActivity() {
         // 🔙 VOLVER AL LOGIN
         btnVolverLogin.setOnClickListener {
             finish()
-        }
-    }
-
-    private fun mostrarUsuarios() {
-        if (usuariosRegistrados.isEmpty()) {
-            tvUsuarios.text = "No hay usuarios registrados"
-        } else {
-            val texto = StringBuilder()
-
-            for (user in usuariosRegistrados) {
-                texto.append("Usuario: ${user.first} | Rol: ${user.second}\n")
-            }
-
-            tvUsuarios.text = texto.toString()
         }
     }
 }

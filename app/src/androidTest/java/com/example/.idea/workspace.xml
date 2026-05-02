@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6e10d31d-22e2-4639-8bde-6a6dd8370bab" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../main/java/com/example/rutaescolarapp/BusesActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../main/java/com/example/rutaescolarapp/HorariosActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../main/java/com/example/rutaescolarapp/InfoActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../main/java/com/example/rutaescolarapp/LoginActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../main/java/com/example/rutaescolarapp/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../main/java/com/example/rutaescolarapp/MapaActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../main/java/com/example/rutaescolarapp/MenuActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../main/java/com/example/rutaescolarapp/NotificacionesActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../main/java/com/example/rutaescolarapp/QuienesSomosActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../main/java/com/example/rutaescolarapp/RegistroActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../main/java/com/example/rutaescolarapp/ServiciosActivity.kt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="3D5W5rVSvpqy6flESNrdQrEW5XE" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/57316/AndroidStudioProjects/RutaEscolarApp/android_swf/app/src/androidTest/java/com/example"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6e10d31d-22e2-4639-8bde-6a6dd8370bab" name="Changes" comment="" />
+      <created>1777572231106</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1777572231106</updated>
+    </task>
+    <servers />
+  </component>
+</project>

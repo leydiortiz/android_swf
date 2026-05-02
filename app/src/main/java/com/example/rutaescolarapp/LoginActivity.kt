@@ -3,9 +3,8 @@ package com.example.rutaescolarapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
+import android.widget.*
+import kotlin.concurrent.thread
 
 class LoginActivity : AppCompatActivity() {
 
@@ -24,24 +23,31 @@ class LoginActivity : AppCompatActivity() {
         btnLogin.setOnClickListener {
 
             val usuario = etUsuario.text.toString().trim()
-            val rol = etRol.text.toString().trim()
             val password = etPassword.text.toString().trim()
 
-            // 🔑 Usuarios permitidos (temporal)
-            val loginCorrecto =
-                (usuario == "admin" && rol == "admin" && password == "1234") ||
-                        (usuario == "juan" && rol == "padre" && password == "1234") ||
-                        (usuario == "maria" && rol == "acudiente" && password == "1234")
+            if (usuario.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Completa los campos", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
-            if (loginCorrecto) {
-                Toast.makeText(this, "Bienvenido $usuario", Toast.LENGTH_SHORT).show()
+            // 🔥 LLAMADA A BASE DE DATOS
+            thread {
 
-                val intent = Intent(this, MenuActivity::class.java)
-                startActivity(intent)
-                finish()
+                val respuesta = Conexion.login(usuario, password)
 
-            } else {
-                Toast.makeText(this, "Datos incorrectos", Toast.LENGTH_SHORT).show()
+                runOnUiThread {
+
+                    if (respuesta.contains("OK")) {
+                        Toast.makeText(this, "Bienvenido $usuario", Toast.LENGTH_SHORT).show()
+
+                        val intent = Intent(this, MenuActivity::class.java)
+                        startActivity(intent)
+                        finish()
+
+                    } else {
+                        Toast.makeText(this, "Datos incorrectos", Toast.LENGTH_SHORT).show()
+                    }
+                }
             }
         }
 
